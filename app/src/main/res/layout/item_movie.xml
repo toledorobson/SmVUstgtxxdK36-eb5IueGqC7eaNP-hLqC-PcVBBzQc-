@@ -1,0 +1,78 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.akinguldere.etsturcase.model.MovieItem" />
+
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="124dp"
+                    android:layout_height="184dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    app:urlImage="@{movie.poster}" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@{movie.name}"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    tools:text="Movie Title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ratingTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleTextView"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:text="@{String.valueOf(movie.vote)}"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>

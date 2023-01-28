@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Etstur Case</string>
+    <string name="no_internet_connection">İnternet bağlantınız bulunamadı.</string>
+</resources>
